@@ -2,7 +2,7 @@
   display: flex;
   height: 400px;
   width: 100%;
-  background-color: salmon;
+  background-color: #5F7A61;
   color: #FFF;
   font-family: 'Bungee', cursive;
   padding-left: 1.5em;
@@ -10,15 +10,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/asfalt-light.png");
+  background-image: url("../images/foggy-birds.png");
 }
 
-.avatar {
-  display: flex;
-  margin-top: 250px;
-
-}
-
-.username {
+.avatar, .username {
   display: flex;
 }

@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-article.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -38,10 +39,10 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav class="nav">
-    <div class="c1">
+    <div class="logo">
       <span>tweeter</span>
     </div>
-    <div class="c2">
+    <div class="write-tweet">
       <span><strong>Write</strong> a new tweet</span>
       <i class="fa-solid fa-angles-down"></i>
     </div>
@@ -60,16 +61,36 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
 
-    <section class="new-tweet">
+    <section class="tweet-form">
       <form action="/tweets/" method="POST">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="button-counter">
+        <div class="bottom-form">
           <button type="submit" class="tweet-button">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+          <output name="counter" class="char-counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
+    <p>
+    <section class="tweet-article">
+      <article>
+        <header class="article-header">
+          <span><i class="fa-solid fa-dove"></i></i> Newton</span>
+          <span class="article-username"><strong>@SirIsaac</strong></span>
+        </header>
+        <span class="article-sentence">If i have seen further it is by standing on the shoulders of giants</span>
+        <footer class="article-footer">
+          <span class="article-counter">10 days ago</span>
+          <span class="article-icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
 
+      </article>
+
+    </section>
+    </p>
   </main>
 </body>
 

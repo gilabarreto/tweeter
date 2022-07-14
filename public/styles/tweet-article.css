@@ -1,0 +1,51 @@
+.tweet-article {
+  display: flex;
+  box-sizing: content-box;
+  width: 70vw;
+  height: 200px;
+  padding: 10px;
+  border: 3px solid #545149;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet-article:hover {
+  box-shadow: 15px 15px #444941;
+  transition: 0.5s;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-username {
+  display: flex;
+  color: lightgray;
+}
+
+.article-sentence {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  color: #545149;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 30px;
+  border-bottom: 3px solid #545149;
+}
+
+.article-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #545149;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
+  color: #7FC8A9;
+  transition: 0.5s;
+}
