@@ -4,6 +4,30 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(document).ready(function () {
+  $('#tweet-button').on('submit', onSubmit)
+
+  loadTweets()
+
+});
+
+const loadTweets = function () {
+  $.get('/tweets')
+    .then(data => {
+      renderTweets(data)
+    })
+};
+
+const onSubmit = function (event) {
+  event.preventDefault();
+
+  const data = $(this).serialize();
+  $.post('/tweets', data)
+    .then(() => {
+      loadTweets()
+    })
+};
+
 const createTweetElement = function (data) {
 
   let $tweet = `
@@ -15,7 +39,7 @@ const createTweetElement = function (data) {
     </header>
     <span class="article-sentence">${data.content.text}</span>
     <footer class="article-footer">
-      <span class="article-counter">${data.created_at}</span>
+      <span class="article-counter">${timeago.format(data.created_at)}</span>
       <span class="article-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -32,42 +56,14 @@ const createTweetElement = function (data) {
 
 };
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 const renderTweets = function (tweets) {
 
-  let result = [];
+  const container = $('#tweets-container')
+
+  container.empty()
 
   for (let tweet of tweets) {
-    result.push(createTweetElement(tweet))
+    const element = createTweetElement(tweet)
+    container.append(element)
   }
-  return result
 }
-
-const $tweet = renderTweets(data);
-
-$('#tweets-container').append($tweet);
