@@ -16,4 +16,5 @@
 
 .avatar, .username {
   display: flex;
+  z-index: 11;
 }

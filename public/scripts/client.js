@@ -5,7 +5,9 @@
  */
 
 $(document).ready(function () {
-  $('#tweet-button').on('submit', onSubmit)
+  $('#tweet-form').on('submit', onSubmit)
+  
+  $("#error").hide()
 
   loadTweets()
 
@@ -21,12 +23,23 @@ const loadTweets = function () {
 const onSubmit = function (event) {
   event.preventDefault();
 
+  $("#error").slideUp()
+  $("#error-msg").text("")
+
   const data = $(this).serialize();
 
   if (data === "text=" || data === null) {
-    alert("You need to hum something!");
+
+    $("#error").slideDown("slow", () => { 
+      $("#error-msg").text("You need to hum something!")
+    });
+
   } else if (data.length > 145) {
-    alert("You're humming too much!");
+
+    $("#error").slideDown("slow", () => {
+      $("#error-msg").text("You need to humming too much!")
+    });
+
   } else {
     $.post('/tweets', data)
       .then(() => {
@@ -62,7 +75,6 @@ const createTweetElement = function (data) {
 
   </article>
   </section>
-  <p>
  `;
 
   return $tweet;
