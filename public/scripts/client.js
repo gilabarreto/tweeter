@@ -22,10 +22,17 @@ const onSubmit = function (event) {
   event.preventDefault();
 
   const data = $(this).serialize();
-  $.post('/tweets', data)
-    .then(() => {
-      loadTweets()
-    })
+
+  if (data === "text=" || data === null) {
+    alert("You need to hum something!");
+  } else if (data.length > 145) {
+    alert("You're humming too much!");
+  } else {
+    $.post('/tweets', data)
+      .then(() => {
+        loadTweets()
+      })
+  }
 };
 
 const createTweetElement = function (data) {
