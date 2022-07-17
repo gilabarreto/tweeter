@@ -6,7 +6,7 @@
 
 $(document).ready(function () {
   $('#tweet-form').on('submit', onSubmit)
-  
+
   $("#error").hide()
 
   loadTweets()
@@ -30,7 +30,7 @@ const onSubmit = function (event) {
 
   if (data === "text=" || data === null) {
 
-    $("#error").slideDown("slow", () => { 
+    $("#error").slideDown("slow", () => {
       $("#error-msg").text("You need to hum something!")
     });
 
@@ -57,13 +57,13 @@ const createTweetElement = function (data) {
   };
 
   let $tweet = `
-    <section class="tweet-article">
-  <article>
+  <section>
+  <article class="tweet-article">
     <header class="article-header">
       <span><img src="${escape(data.user.avatars)}"> ${escape(data.user.name)}</span>
-      <span class="article-username"><strong>${escape(data.user.handle)}</strong></span>
+      <span class="article-username">${escape(data.user.handle)}</span>
     </header>
-    <span class="article-sentence">${escape(data.content.text)}</span>
+    <div class="article-sentence">${escape(data.content.text)}</div>
     <footer class="article-footer">
       <span class="article-counter">${escape(timeago.format(data.created_at))}</span>
       <span class="article-icons">
@@ -72,10 +72,9 @@ const createTweetElement = function (data) {
         <i class="fa-solid fa-heart"></i>
       </span>
     </footer>
-
   </article>
   </section>
- `;
+  `;
 
   return $tweet;
 
