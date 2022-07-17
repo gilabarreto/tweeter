@@ -37,16 +37,22 @@ const onSubmit = function (event) {
 
 const createTweetElement = function (data) {
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   let $tweet = `
     <section class="tweet-article">
   <article>
     <header class="article-header">
-      <span><img src="${data.user.avatars}"> ${data.user.name}</span>
-      <span class="article-username"><strong>${data.user.handle}</strong></span>
+      <span><img src="${escape(data.user.avatars)}"> ${escape(data.user.name)}</span>
+      <span class="article-username"><strong>${escape(data.user.handle)}</strong></span>
     </header>
-    <span class="article-sentence">${data.content.text}</span>
+    <span class="article-sentence">${escape(data.content.text)}</span>
     <footer class="article-footer">
-      <span class="article-counter">${timeago.format(data.created_at)}</span>
+      <span class="article-counter">${escape(timeago.format(data.created_at))}</span>
       <span class="article-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -71,6 +77,6 @@ const renderTweets = function (tweets) {
 
   for (let tweet of tweets) {
     const element = createTweetElement(tweet)
-    container.append(element)
+    container.prepend(element)
   }
 }
