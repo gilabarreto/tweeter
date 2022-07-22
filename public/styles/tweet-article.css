@@ -1,9 +1,7 @@
 .tweet-article {
   display: flex;
   flex-direction: column;
-  box-sizing: content-box;
   width: 70vw;
-  height: 200px;
   margin: 40px 0px 40px 0px;
   padding: 30px;
   border: 3px solid #545149;
@@ -18,6 +16,7 @@
 .article-header {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .article-username {
@@ -27,16 +26,15 @@
 
 .article-sentence {
   display: flex;
-  width: 95%;
+  width: 100%;
   color: #545149;
   font-size: 24px;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 30px;
   border-bottom: 3px solid #545149;
-  word-break: break-all;
+  word-break: break-word;
   justify-content: center;
-  align-content: center;
 }
 
 .article-footer {
@@ -45,7 +43,7 @@
   font-size: 16px;
   font-weight: bold;
   font-family: 'Source Sans Pro', sans-serif;
-  /* padding: 0px 10px 0px 10px; */
+  padding: 10px;
   justify-content: space-between;
 }
 

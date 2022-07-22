@@ -26,18 +26,19 @@ const onSubmit = function (event) {
   $("#error").slideUp()
   $("#error-msg").text("")
 
-  const data = $(this).serialize();
+  const data = $(this).serialize()
+  const newData = data.replace(/%20/g," ").slice(5).trim()
 
-  if (data === "text=" || data === null) {
+  if (newData === "" || newData === null) {
 
     $("#error").slideDown("slow", () => {
       $("#error-msg").text("You need to hum something!")
     });
 
-  } else if (data.length > 145) {
-
+  } else if (newData.length > 140) {
+    console.log(newData)
     $("#error").slideDown("slow", () => {
-      $("#error-msg").text("You need to humming too much!")
+      $("#error-msg").text("You are humming too much!")
     });
 
   } else {
@@ -52,6 +53,8 @@ const createTweetElement = function (data) {
 
   const escape = function (str) {
     let div = document.createElement("div");
+    console.log("str", str)
+    console.log("document", document.createTextNode(str));
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
@@ -60,12 +63,12 @@ const createTweetElement = function (data) {
   <section>
   <article class="tweet-article">
     <header class="article-header">
-      <span><img src="${escape(data.user.avatars)}"> ${escape(data.user.name)}</span>
-      <span class="article-username">${escape(data.user.handle)}</span>
+      <span><img src="${data.user.avatars}"> ${data.user.name}</span>
+      <span class="article-username">${data.user.handle}</span>
     </header>
     <div class="article-sentence">${escape(data.content.text)}</div>
     <footer class="article-footer">
-      <span class="article-counter">${escape(timeago.format(data.created_at))}</span>
+      <span class="article-counter">${timeago.format(data.created_at)}</span>
       <span class="article-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
