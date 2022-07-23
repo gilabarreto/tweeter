@@ -1,11 +1,14 @@
+/* Mobile Styles */
+
 .tweet-article {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 100%;
   margin: 40px 0px 40px 0px;
   padding: 30px;
   border: 3px solid #545149;
-  justify-content: space-around;
+  border-radius: 5px;
+  background-color: #E900FF;
 }
 
 .tweet-article:hover {
@@ -16,38 +19,112 @@
 .article-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  /* align-items: baseline; */
 }
 
 .article-username {
-  color: lightgray;
+  color: #FFF;
   font-weight: bold;
 }
 
 .article-sentence {
+/*    width: 100%;
   display: flex;
-  width: 100%;
-  color: #545149;
+  justify-content: center;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif; */
+  color: #FFF;
   font-weight: bold;
-  font-family: 'Source Sans Pro', sans-serif;
+  word-break: break-all;
+  white-space: pre-wrap;
   padding: 30px;
   border-bottom: 3px solid #545149;
-  word-break: break-word;
-  justify-content: center;
 }
 
 .article-footer {
   display: flex;
-  color: #545149;
+  justify-content: space-between;
+  color: #FFF;
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Source Sans Pro', sans-serif;
   padding: 10px;
-  justify-content: space-between;
 }
 
-.fa-flag:hover, .fa-retweet:hover, .fa-heart:hover {
-  color: #7FC8A9;
+.fa-flag:hover,
+.fa-retweet:hover,
+.fa-heart:hover {
+  color: #545149;
   transition: 0.5s;
+}
+
+/* Tablet and Desktop styles */
+
+@media only screen and (min-width: 768px) {
+
+  .tweet-article {
+
+/*     display: flex;
+    flex-direction: column;
+    margin: 40px;
+    padding: 30px;
+    border: 3px solid #545149;
+    border-radius: 5px;
+    justify-content: space-around; */
+
+    width: 90%;
+    background-color: #FAEA48;
+  }
+
+  .tweet-article:hover {
+    box-shadow: 15px 15px #444941;
+    transition: 0.5s;
+  }
+
+/*   .article-header {
+    display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
+    justify-content: space-between;
+    align-items: baseline;
+  } */
+
+  .article-username {
+    color: #FBB454;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .article-sentence {
+
+/*     display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    padding: 30px;
+    word-break: break-all;
+    white-space: pre-wrap; */
+
+    color: #545149;
+    border-bottom: 3px solid #FBB454;
+  }
+
+  .article-footer {
+
+/*     display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10px;
+    justify-content: space-between; */
+
+    color: #545149;
+  }
+
+  .fa-flag:hover,
+  .fa-retweet:hover,
+  .fa-heart:hover {
+    color: #FBB454;
+    transition: 0.5s;
+  }
 }

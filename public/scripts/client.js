@@ -5,6 +5,7 @@
  */
 
 $(document).ready(function () {
+
   $('#tweet-form').on('submit', onSubmit)
 
   $("#error").hide()
@@ -26,22 +27,22 @@ const onSubmit = function (event) {
   $("#error").slideUp()
   $("#error-msg").text("")
 
-  const data = $(this).serialize()
-  const newData = data.replace(/%20/g," ").slice(5).trim()
+  const tweetText = $("#tweet-text").val()
 
-  if (newData === "" || newData === null) {
+  if (tweetText === "" || tweetText === null) {
 
     $("#error").slideDown("slow", () => {
       $("#error-msg").text("You need to hum something!")
     });
 
-  } else if (newData.length > 140) {
-    console.log(newData)
+  } else if (tweetText.length > 140) {
+    console.log(tweetText)
     $("#error").slideDown("slow", () => {
       $("#error-msg").text("You are humming too much!")
     });
 
   } else {
+    data = $(this).serialize()
     $.post('/tweets', data)
       .then(() => {
         loadTweets()
@@ -53,9 +54,7 @@ const createTweetElement = function (data) {
 
   const escape = function (str) {
     let div = document.createElement("div");
-    console.log("str", str)
-    console.log("document", document.createTextNode(str));
-    div.appendChild(document.createTextNode(str));
+    div.append(document.createTextNode(str));
     return div.innerHTML;
   };
 
@@ -85,12 +84,10 @@ const createTweetElement = function (data) {
 
 const renderTweets = function (tweets) {
 
-  const container = $('#tweets-container')
-
-  container.empty()
+  const container = $('#tweets-container').empty();
 
   for (let tweet of tweets) {
     const element = createTweetElement(tweet)
     container.prepend(element)
   }
-}
+};

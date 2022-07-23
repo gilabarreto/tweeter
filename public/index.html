@@ -5,6 +5,9 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- Viewport -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
   <!-- Font Awesome Library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -50,32 +53,34 @@
     </div>
   </nav>
 
-  <header class="header">
-    <div class="profile">
-      <img src="/images/profile.png">
-      <img class="avatar" src="/images/blue-bird.png">
-    </div>
-    <br>
-    <div class="username">
-      <h2>Your Name</h2>
-    </div>
-  </header>
+  <div class="layout">
+    <header class="header">
+      <div class="profile">
+        <img src="/images/rastafari.png" class="img-desktop">
+        <img src="/images/rastafari-transparent.png" class="img-mobile">
+      </div>
+      <div class="username">
+        <h2><strong>Victor</strong> Barreto</h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <div id="error"><i class="fa-solid fa-triangle-exclamation"></i> <span id="error-msg"></span> <i
-        class="fa-solid fa-triangle-exclamation"></i></div>
-    <section class="tweet-form">
-      <form id="tweet-form" action="/tweets/" method="POST">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="bottom-form">
-          <button type="submit" class="tweet-button">Tweet</button>
-          <output name="counter" class="char-counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <div id="tweets-container"></div>
-  </main>
+    <!-- Page-specific (main) content here -->
+    <main class="main">
+      <div id="error"><i class="fa-solid fa-triangle-exclamation"></i> <span id="error-msg"></span> <i
+          class="fa-solid fa-triangle-exclamation"></i></div>
+      <section>
+        <!-- <label for="tweet-text">What are you humming about?</label> -->
+        <form id="tweet-form" action="/tweets/" method="POST">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div class="bottom-form">
+            <button type="submit" class="tweet-button">Tweet</button>
+            <output name="counter" class="char-counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <div id="tweets-container"></div>
+    </main>
+  </div>
   <script type="text/javascript" src="/scripts/client.js"></script>
 </body>
 
