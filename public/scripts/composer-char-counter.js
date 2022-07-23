@@ -4,6 +4,7 @@ $(document).ready(function () {
 
 });
 
+// Function responsible for character counter.
 const onInput = function (event) {
   const value = $(this).val().length;
   let counter = $(this).siblings().children()[1];

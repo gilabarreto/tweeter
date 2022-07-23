@@ -1,13 +1,6 @@
 /* Mobile Styles */
 
 #tweet-form {
-
-  /*   color: #C8F2EF;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
-  justify-content: center;
-  margin: 0px 40px 0px 40px; */
-
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -19,11 +12,6 @@
 }
 
 .tweet-button {
-
-  /*   text-align: center;
-  text-decoration: none;
-  cursor: pointer; */
-
   display: flex;
   background-color: #E900FF;
   border: 3px solid #545149;
@@ -43,23 +31,12 @@
 }
 
 #tweet-text {
-
-  /*   display: flex;
-  flex-direction: column;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  align-content: center; 
-  color: #545149;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;*/
-
   background-color: #FBB454;
   font-weight: bold;
   height: 48px;
   margin-top: 20px;
   border: none;
-  border-bottom: 2px solid #545149;  
+  border-bottom: 2px solid #545149;
 }
 
 #tweet-text::placeholder {
@@ -67,9 +44,6 @@
 }
 
 #error {
-
-  /* background-color: #FFC600; */
-
   display: flex;
   box-sizing: content-box;
   width: 90%;
@@ -85,45 +59,16 @@
 @media only screen and (min-width: 768px) {
 
   #tweet-form {
-
-/*     display: flex;
-    flex-direction: column;
-    color: #C8F2EF;
-    font-size: 24px;
-    font-family: 'Source Sans Pro', sans-serif;
-    justify-content: center; */
-
     width: 90%;
     margin: 0px auto;
   }
 
-/*   .bottom-form {
-    display: flex;
-    justify-content: space-between;
-  } */
-
   .tweet-button {
-
-/*     display: flex;
-    border: 3px solid #545149;
-    padding: 10px 25px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: 'Bungee', cursive;
-    margin: 4px 2px;
-    cursor: pointer; */
-
     color: #545149;
     background-color: #FAEA48;
   }
 
   .char-counter {
-
-/*     display: flex;
-    font-size: 24px;
-    font-family: 'Bungee', cursive; */
-
     color: #FFF;
   }
 
@@ -132,20 +77,6 @@
   }
 
   #tweet-text {
-
-/*     display: flex;
-    flex-direction: column;
-    color: #FFF;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: 'Source Sans Pro', sans-serif;
-    height: 48px;
-    width: 100%;
-    border: none;
-    justify-content: center;
-    align-items: center;
-    align-content: center; */
-
     background-color: #F637EC;
     border-bottom: 2px solid #FFF;
   }
@@ -153,18 +84,4 @@
   #tweet-text::placeholder {
     color: #FFF;
   }
-
-  /*   #error {
-    display: flex;
-    box-sizing: content-box;
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #F637EC;
-    border: 3px solid #3330E4;
-    color: #3330E4;
-    justify-content: space-evenly;
-  } */
 }
-
-;

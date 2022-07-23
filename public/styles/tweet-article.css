@@ -19,7 +19,6 @@
 .article-header {
   display: flex;
   justify-content: space-between;
-  /* align-items: baseline; */
 }
 
 .article-username {
@@ -28,11 +27,6 @@
 }
 
 .article-sentence {
-/*    width: 100%;
-  display: flex;
-  justify-content: center;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif; */
   color: #FFF;
   font-weight: bold;
   word-break: break-all;
@@ -62,15 +56,6 @@
 @media only screen and (min-width: 768px) {
 
   .tweet-article {
-
-/*     display: flex;
-    flex-direction: column;
-    margin: 40px;
-    padding: 30px;
-    border: 3px solid #545149;
-    border-radius: 5px;
-    justify-content: space-around; */
-
     width: 90%;
     background-color: #FAEA48;
   }
@@ -80,13 +65,6 @@
     transition: 0.5s;
   }
 
-/*   .article-header {
-    display: flex;
-    font-family: 'Source Sans Pro', sans-serif;
-    justify-content: space-between;
-    align-items: baseline;
-  } */
-
   .article-username {
     color: #FBB454;
     font-weight: bold;
@@ -95,29 +73,11 @@
 
   .article-sentence {
 
-/*     display: flex;
-    width: 100%;
-    justify-content: center;
-    font-size: 24px;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: bold;
-    padding: 30px;
-    word-break: break-all;
-    white-space: pre-wrap; */
-
     color: #545149;
     border-bottom: 3px solid #FBB454;
   }
 
   .article-footer {
-
-/*     display: flex;
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Source Sans Pro', sans-serif;
-    padding: 10px;
-    justify-content: space-between; */
-
     color: #545149;
   }
 

@@ -15,10 +15,13 @@ $(document).ready(function () {
 });
 
 const loadTweets = function () {
+
+  // Function responsible for fetching tweets from the http://localhost:8080/tweets page.
   $.get('/tweets')
     .then(data => {
       renderTweets(data)
     })
+
 };
 
 const onSubmit = function (event) {
@@ -27,22 +30,29 @@ const onSubmit = function (event) {
   $("#error").slideUp()
   $("#error-msg").text("")
 
+  // Data validation before sending form to server.
   const tweetText = $("#tweet-text").val()
 
+  // Verify if tweet is empty or null.
   if (tweetText === "" || tweetText === null) {
 
     $("#error").slideDown("slow", () => {
       $("#error-msg").text("You need to hum something!")
     });
 
+    // Verify if tweet is over 140 characters.
   } else if (tweetText.length > 140) {
-    console.log(tweetText)
+
     $("#error").slideDown("slow", () => {
       $("#error-msg").text("You are humming too much!")
+
     });
 
   } else {
+
+    // Serialize the form data and send it to the server as a query string.
     data = $(this).serialize()
+    
     $.post('/tweets', data)
       .then(() => {
         loadTweets()
@@ -50,6 +60,7 @@ const onSubmit = function (event) {
   }
 };
 
+// Function that generates the structure for a tweet.
 const createTweetElement = function (data) {
 
   const escape = function (str) {
@@ -82,6 +93,7 @@ const createTweetElement = function (data) {
 
 };
 
+// Function takes in an array of tweet objects and appends each one to the #tweets-container.
 const renderTweets = function (tweets) {
 
   const container = $('#tweets-container').empty();

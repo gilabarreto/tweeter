@@ -1,11 +1,6 @@
 /* Mobile Styles */
 
 .header {
-
-/*   width: 100%;
-  margin-top: 120px;
-  padding: 0px 10px 0px 10px; */
-
   display: flex;
   height: 400px;
   flex-direction: column;
@@ -41,13 +36,6 @@
 @media only screen and (min-width: 768px) {
 
   .header {
-
-/*     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    color: #FFF; */
-
     width: 35%;
     background-color: #FAEA48;
     border: 3px solid #545149;
@@ -56,11 +44,6 @@
   }
 
   .username {
-
-/*     width: 90%;
-    display: flex;
-    justify-content: center; */
-    font-weight: 600;
     background-color: #FBB454;
     border: 3px solid #545149;
     border-radius: 5px;
