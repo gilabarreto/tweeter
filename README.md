@@ -7,9 +7,9 @@ This project was build with HTML, CSS, JS, jQuery and AJAX as part of my Lightho
 ## Final Product
 
 ### Running App
-!["screenshot of TinyApp running"](images/running.gif)
+!["screenshot of TinyApp running"](public/images/running.gif)
 ### Designed for Mobile, Tablet and Desktop
-!["screenshot of TinyApp running"](images/responsive.gif)
+!["screenshot of TinyApp running"](public/images/responsive.gif)
 
 ## Getting Started
 
@@ -26,5 +26,5 @@ This project was build with HTML, CSS, JS, jQuery and AJAX as part of my Lightho
 
 ## Enjoy!
 
-![""](images/enjoy.gif)
+![""](public/images/enjoy.gif)
 
