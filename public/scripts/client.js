@@ -52,9 +52,11 @@ const onSubmit = function (event) {
 
     // Serialize the form data and send it to the server as a query string.
     data = $(this).serialize()
-    
+
     $.post('/tweets', data)
       .then(() => {
+        $("#tweet-text").val("")
+        $(".char-counter").val(140)
         loadTweets()
       })
   }
